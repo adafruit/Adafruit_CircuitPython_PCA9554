@@ -12,7 +12,7 @@ board.I2C().deinit()
 i2c = board.I2C()
 tft_io_expander = dict(board.TFT_IO_EXPANDER)
 
-pcf = adafruit_pca9554.PCA9554(i2c, address=tft_io_expander['i2c_address'])
+pcf = adafruit_pca9554.PCA9554(i2c, address=tft_io_expander["i2c_address"])
 button_up = pcf.get_pin(board.BTN_UP)
 button_up.switch_to_input(pull=digitalio.Pull.UP)
 
