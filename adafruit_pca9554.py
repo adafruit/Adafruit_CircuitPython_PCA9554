@@ -95,9 +95,9 @@ class PCA9554:
             # Set as output and turn off the pullup
             self.write_gpio(CONFIGPORT, current_value & ~(1 << pin))
 
-    def get_pin_mode(self, pin: int) -> None:
+    def get_pin_mode(self, pin: int) -> bool:
         """Get a single GPIO pin's mode"""
-        return (self.read_gpio(CONFIGPORT) >> pin) & 0x1
+        return bool((self.read_gpio(CONFIGPORT) >> pin) & 0x1)
 
     def write_pin(self, pin: int, val: bool) -> None:
         """Set a single GPIO pin high/pulled-up or driven low"""
@@ -111,7 +111,7 @@ class PCA9554:
 
     def read_pin(self, pin: int) -> bool:
         """Read a single GPIO pin as high/pulled-up or driven low"""
-        return (self.read_gpio(INPUTPORT) >> pin) & 0x1
+        return bool((self.read_gpio(INPUTPORT) >> pin) & 0x1)
 
 
 """
