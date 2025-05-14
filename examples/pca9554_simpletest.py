@@ -4,8 +4,10 @@
 # SPDX-License-Identifier: Unlicense
 
 import time
+
 import board
 import digitalio
+
 import adafruit_pca9554
 
 board.I2C().deinit()
