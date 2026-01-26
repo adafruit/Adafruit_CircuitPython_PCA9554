@@ -78,7 +78,7 @@ class PCA9554:
         with self.i2c_device as i2c:
             i2c.write(self._writebuf)
 
-    def read_gpio(self, register) -> int:
+    def read_gpio(self, register: int) -> int:
         """Read the full 8-bits of data from the GPIO register"""
         self._readbuf[0] = register & 0xFF
         with self.i2c_device as i2c:
